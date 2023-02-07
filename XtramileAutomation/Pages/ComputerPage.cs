@@ -27,6 +27,10 @@ namespace XtramileAutomation.Pages
         IWebElement titleFormAddComputer => driver.FindElement(By.XPath("//section[contains(@id,'main')]/h1"));
         public IWebElement succesMsg => driver.FindElement(By.ClassName("alert-message"));
 
+        public IWebElement errorWrongDates => driver.FindElement(By.XPath("//span[contains(@class, 'help-inline') and contains(text(),'Failed to decode date')]"));
+
+        
+
         public void SearchComputer(string computerName)
         {
             SearhboxComputer.SendKeys(computerName);
@@ -43,6 +47,7 @@ namespace XtramileAutomation.Pages
         public void inputToField(string field, string value)
         {
             IWebElement fieldCreation = driver.FindElement(By.Id($"{field}"));
+            fieldCreation.Clear();
             fieldCreation.SendKeys(value);
         }
 
@@ -52,11 +57,25 @@ namespace XtramileAutomation.Pages
             selectElement.SelectByText(company);
         }
 
-        public void ButtonCreateComputer()
+        public void ButtonGeneralComputer(string value)
         {
-            IWebElement button = driver.FindElement(By.XPath("//input[contains(@value,'Create this computer')]"));
+            IWebElement button = driver.FindElement(By.XPath($"//input[contains(@value,'{value}')]"));
             button.Click();
            
         }
+
+        public void SelectedComputer(string CompName)
+        {
+            IWebElement selectedComputerName = driver.FindElement(By.XPath($"//td/a[contains(text(), '{CompName}')]"));
+            
+            selectedComputerName.Click();
+        }
+
+        public void ErrorMessageShowing(string field, string message)
+        {
+            var fieldFailed = driver.FindElement(By.XPath($"//input[contains(@id,'{field}')]/following-sibling::span")).Text;
+            Assert.AreEqual(fieldFailed, message);
+        }
     }
+
 }

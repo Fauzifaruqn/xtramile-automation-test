@@ -14,7 +14,7 @@ namespace XtramileAutomation.StepDefinitions
     {
         private IWebDriver driver;
         private ComputerPage computerPage;
-        private string computerName;
+        public string computerName;
 
 
         public ComputerStepDefinitions(IWebDriver driver)
@@ -53,7 +53,7 @@ namespace XtramileAutomation.StepDefinitions
             foreach (var row in rows)
             {
                 // Get the values for each column in the row
-                var computerName = row.FindElement(By.XPath("//table[contains(@class,'computers zebra-striped')]/tbody/tr/td[1]")).Text;
+                computerName = row.FindElement(By.XPath("//table[contains(@class,'computers zebra-striped')]/tbody/tr/td[1]")).Text;
                 var introduced = row.FindElement(By.XPath("//table[contains(@class,'computers zebra-striped')]/tbody/tr/td[2]")).Text;
                 var discontinued = row.FindElement(By.XPath("//table[contains(@class,'computers zebra-striped')]/tbody/tr/td[3]")).Text;
                 var company = row.FindElement(By.XPath("//table[contains(@class,'computers zebra-striped')]/tbody/tr/td[4]")).Text;
@@ -104,19 +104,57 @@ namespace XtramileAutomation.StepDefinitions
 
         public void ClickCreateComputer()
         {
-            computerPage.ButtonCreateComputer();
+            computerPage.ButtonGeneralComputer("Create this computer");
         }
 
-        [Then(@"a new computer successfully created")]
+        [Then(@"I delete the computer that was searched")]
+        public void DeleteComputer()
+        {
+            Console.WriteLine("Computer Name: " + computerName);
 
-        public void ComputerCreated()
+            computerPage.SelectedComputer(computerName);
+
+
+            computerPage.ButtonGeneralComputer("Delete this computer");
+        }
+
+        [Then(@"a computer successfully ""(.*)""")]
+
+        public void ComputerCreatedDeleted(string actions)
         {
             Console.WriteLine("Computer Name: " + computerName);
 
             string actualMessage = computerPage.succesMsg.Text;
 
             // Use Assert.AreEqual to verify the actual message against the expected message
-            Assert.AreEqual($"Done ! Computer {computerName} has been created", actualMessage);
+            Assert.AreEqual($"Done ! Computer {computerName} has been {actions}", actualMessage);
+        }
+
+        [Then(@"I updated the computer that was searched")]
+        public void EditComputer()
+        {
+            Console.WriteLine("Computer Name: " + computerName);
+
+            computerPage.SelectedComputer(computerName);
+        }
+
+        [When(@"I click on the Save this computer button")]
+        public void ClickUpdateComputer()
+        {
+            computerPage.ButtonGeneralComputer("Save this computer");
+        }
+
+        [Then(@"in the computer field ""(.*)"" an error message will appear ""(.*)""")]
+        public void ErrorMessage(string field, string msg)
+        {
+            computerPage.ErrorMessageShowing(field, msg);
+        }
+
+        [Then(@"the error message wrong date format will appear")]
+        public void ErrorWrongDateMessage() {
+
+            var err = computerPage.errorWrongDates.Text;
+            Assert.IsTrue(err.Contains("Failed to decode date"));
         }
     }
 }
