@@ -1,0 +1,36 @@
+# Logs
+logs/
+*.log
+
+# Binaries
+*.dll
+*.exe
+*.bin
+
+# NuGet Packages
+bin/
+obj/
+
+# Build results
+*.VisualState.xml
+*.Cache
+
+# Test Results
+TestResult/
+
+# WebDriver executables
+chromedriver.exe
+geckodriver.exe
+IEDriverServer.exe
+
+# Packages
+packages/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Solution-specific files
+.vs/
+*.sln.ide
