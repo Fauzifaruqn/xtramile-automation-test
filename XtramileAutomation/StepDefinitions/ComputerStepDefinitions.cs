@@ -14,6 +14,8 @@ namespace XtramileAutomation.StepDefinitions
     {
         private IWebDriver driver;
         private ComputerPage computerPage;
+        private string computerName;
+
 
         public ComputerStepDefinitions(IWebDriver driver)
         {
@@ -45,9 +47,7 @@ namespace XtramileAutomation.StepDefinitions
         {
             ComputerPage computerPage = new ComputerPage(driver);
             var rows = computerPage.RowtableComputer;
-            // Get the table rows
-
-
+        
 
             // Loop through each row in the table
             foreach (var row in rows)
@@ -78,6 +78,45 @@ namespace XtramileAutomation.StepDefinitions
             Assert.AreEqual("Nothing to display", message);
         }
 
+        [When(@"I click Add a new computer button")]
+        public void ClickButtonComputer()
+        {
+            computerPage.ButtonAddComputer();
+        }
 
+
+        [When(@"I enter the following details")]
+        public void EnterFormComputer(Table table)
+        {
+
+            computerName = table.Rows[0]["computer name"];
+            var introducedDate = table.Rows[0]["introduced"];
+            var discontinuedDate = table.Rows[0]["discontinued"];
+            var companyName = table.Rows[0]["company"];
+        
+            computerPage.inputToField("name", computerName);
+            computerPage.inputToField("introduced", introducedDate);
+            computerPage.inputToField("discontinued", discontinuedDate);
+            computerPage.SelectCompany(companyName);
+        }
+
+        [When(@"I click on the Create this computer button")]
+
+        public void ClickCreateComputer()
+        {
+            computerPage.ButtonCreateComputer();
+        }
+
+        [Then(@"a new computer successfully created")]
+
+        public void ComputerCreated()
+        {
+            Console.WriteLine("Computer Name: " + computerName);
+
+            string actualMessage = computerPage.succesMsg.Text;
+
+            // Use Assert.AreEqual to verify the actual message against the expected message
+            Assert.AreEqual($"Done ! Computer {computerName} has been created", actualMessage);
+        }
     }
 }
