@@ -7,6 +7,8 @@
 - Implement Page Object Model
 - UI Automation Result
 
+Development technical documentation : https://docs.google.com/document/d/15-NXKKpoOH8KTTAHmJS88gpc-pdqII8WXurc82ToUrY/edit?usp=sharing
+
 
 #### 1. Introduction
 This is a repository for implementing UI automation regarding computer databases and JavaScript alerts. The tools used are Selenium C#. Additionally implementing Cucumber/BDD using Specflow https://specflow.org/ and Page Object Model. And the following is the Test Scenario that I use <br />
