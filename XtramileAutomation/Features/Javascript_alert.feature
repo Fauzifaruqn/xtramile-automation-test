@@ -2,7 +2,6 @@
 
 A short summary of the feature
 
-@tag1
 Scenario: User should be able to Click JS Alert
 	Given I go to Javascript Alert Page
 	When I click on the "Click for JS Alert" button

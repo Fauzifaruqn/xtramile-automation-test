@@ -35,7 +35,7 @@ namespace XtramileAutomation.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Computer_database", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Computer_database", "As a user, I want to be able to view and manage a list of computers.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,16 +74,16 @@ namespace XtramileAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search a Computer in Database")]
+        [NUnit.Framework.DescriptionAttribute("User should be able to search a computer database")]
         [NUnit.Framework.CategoryAttribute("positive_case")]
         [NUnit.Framework.CategoryAttribute("search_computer")]
-        public virtual void SearchAComputerInDatabase()
+        public virtual void UserShouldBeAbleToSearchAComputerDatabase()
         {
             string[] tagsOfScenario = new string[] {
                     "positive_case",
                     "search_computer"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search a Computer in Database", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User should be able to search a computer database", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -128,16 +128,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search for non-existing computer")]
+        [NUnit.Framework.DescriptionAttribute("User should not be able to find computer data that is not in the database")]
         [NUnit.Framework.CategoryAttribute("negative_case")]
         [NUnit.Framework.CategoryAttribute("non_existing_computer")]
-        public virtual void SearchForNon_ExistingComputer()
+        public virtual void UserShouldNotBeAbleToFindComputerDataThatIsNotInTheDatabase()
         {
             string[] tagsOfScenario = new string[] {
                     "negative_case",
                     "non_existing_computer"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for non-existing computer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User should not be able to find computer data that is not in the database", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -172,14 +172,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a New Computer")]
+        [NUnit.Framework.DescriptionAttribute("the user should have successfully created a new computer")]
         [NUnit.Framework.CategoryAttribute("create_computer")]
-        public virtual void CreateANewComputer()
+        public virtual void TheUserShouldHaveSuccessfullyCreatedANewComputer()
         {
             string[] tagsOfScenario = new string[] {
                     "create_computer"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a New Computer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the user should have successfully created a new computer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -230,16 +230,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete a Computer")]
+        [NUnit.Framework.DescriptionAttribute("the user should have successfully removed a computer from the database")]
         [NUnit.Framework.CategoryAttribute("positive_case")]
         [NUnit.Framework.CategoryAttribute("delete_computer")]
-        public virtual void DeleteAComputer()
+        public virtual void TheUserShouldHaveSuccessfullyRemovedAComputerFromTheDatabase()
         {
             string[] tagsOfScenario = new string[] {
                     "positive_case",
                     "delete_computer"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a Computer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the user should have successfully removed a computer from the database", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -290,16 +290,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update a Computer")]
+        [NUnit.Framework.DescriptionAttribute("The user should have successfully updated a computer")]
         [NUnit.Framework.CategoryAttribute("positive_case")]
         [NUnit.Framework.CategoryAttribute("update_computer")]
-        public virtual void UpdateAComputer()
+        public virtual void TheUserShouldHaveSuccessfullyUpdatedAComputer()
         {
             string[] tagsOfScenario = new string[] {
                     "positive_case",
                     "update_computer"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update a Computer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user should have successfully updated a computer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -545,6 +545,240 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click on the Create this computer button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 81
+ testRunner.Then("the error message wrong date format will appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("user should fail to update a computer if computer name is empty")]
+        [NUnit.Framework.CategoryAttribute("negative_case")]
+        [NUnit.Framework.CategoryAttribute("update_computer_empty_computername")]
+        public virtual void UserShouldFailToUpdateAComputerIfComputerNameIsEmpty()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "negative_case",
+                    "update_computer_empty_computername"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("user should fail to update a computer if computer name is empty", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 85
+ testRunner.Given("I go to Computer Database Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 86
+ testRunner.When("I Type \"lenovo thinkpad r400\" in Computer Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "computer name",
+                            "introduced",
+                            "discontinued",
+                            "company"});
+                table9.AddRow(new string[] {
+                            "lenovo thinkpad r400",
+                            "-",
+                            "-",
+                            "-"});
+#line 87
+ testRunner.Then("in the table computer contains", ((string)(null)), table9, "Then ");
+#line hidden
+#line 90
+ testRunner.And("I updated the computer that was searched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "computer name",
+                            "introduced",
+                            "discontinued",
+                            "company"});
+                table10.AddRow(new string[] {
+                            "",
+                            "2022-01-01",
+                            "2023-01-01",
+                            "IBM"});
+#line 91
+ testRunner.When("I enter the following details", ((string)(null)), table10, "When ");
+#line hidden
+#line 94
+ testRunner.And("I click on the Save this computer button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 95
+ testRunner.Then("in the computer field \"name\" an error message will appear \"Failed to refine type " +
+                        ": Predicate isEmpty() did not fail.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("user should fail to update a computer if Discontinued date is before introduction" +
+            " date")]
+        [NUnit.Framework.CategoryAttribute("negative_case")]
+        [NUnit.Framework.CategoryAttribute("update_computer_fail_discontinued")]
+        public virtual void UserShouldFailToUpdateAComputerIfDiscontinuedDateIsBeforeIntroductionDate()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "negative_case",
+                    "update_computer_fail_discontinued"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("user should fail to update a computer if Discontinued date is before introduction" +
+                    " date", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 98
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 99
+ testRunner.Given("I go to Computer Database Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 100
+ testRunner.When("I Type \"lenovo thinkpad r400\" in Computer Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "computer name",
+                            "introduced",
+                            "discontinued",
+                            "company"});
+                table11.AddRow(new string[] {
+                            "lenovo thinkpad r400",
+                            "-",
+                            "-",
+                            "-"});
+#line 101
+ testRunner.Then("in the table computer contains", ((string)(null)), table11, "Then ");
+#line hidden
+#line 104
+ testRunner.And("I updated the computer that was searched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                            "computer name",
+                            "introduced",
+                            "discontinued",
+                            "company"});
+                table12.AddRow(new string[] {
+                            "Lenovo Legion 5",
+                            "2022-01-01",
+                            "2021-01-01",
+                            "IBM"});
+#line 105
+ testRunner.When("I enter the following details", ((string)(null)), table12, "When ");
+#line hidden
+#line 108
+ testRunner.And("I click on the Save this computer button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 109
+ testRunner.Then("in the computer field \"discontinued\" an error message will appear \"Discontinued d" +
+                        "ate is before introduction date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("user should fail to update a computer if Discontinued or introduced date use wron" +
+            "g format")]
+        [NUnit.Framework.CategoryAttribute("negative_case")]
+        [NUnit.Framework.CategoryAttribute("update_computer_wrong_date_format")]
+        public virtual void UserShouldFailToUpdateAComputerIfDiscontinuedOrIntroducedDateUseWrongFormat()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "negative_case",
+                    "update_computer_wrong_date_format"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("user should fail to update a computer if Discontinued or introduced date use wron" +
+                    "g format", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 112
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 113
+ testRunner.Given("I go to Computer Database Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 114
+ testRunner.When("I Type \"lenovo thinkpad r400\" in Computer Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                            "computer name",
+                            "introduced",
+                            "discontinued",
+                            "company"});
+                table13.AddRow(new string[] {
+                            "lenovo thinkpad r400",
+                            "-",
+                            "-",
+                            "-"});
+#line 115
+ testRunner.Then("in the table computer contains", ((string)(null)), table13, "Then ");
+#line hidden
+#line 118
+ testRunner.And("I updated the computer that was searched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "computer name",
+                            "introduced",
+                            "discontinued",
+                            "company"});
+                table14.AddRow(new string[] {
+                            "Lenovo Legion 5",
+                            "2022/01/01",
+                            "2021/01/01",
+                            "IBM"});
+#line 119
+ testRunner.When("I enter the following details", ((string)(null)), table14, "When ");
+#line hidden
+#line 122
+ testRunner.And("I click on the Save this computer button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 123
  testRunner.Then("the error message wrong date format will appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
